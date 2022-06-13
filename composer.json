@@ -1,5 +1,5 @@
 {
-    "name": "saithink/datadoc",
+    "name": "sai/datadoc",
     "description": "database document",
     "type": "plugin",
     "require": {
@@ -8,7 +8,7 @@
     "license": "Apache-2.0",
     "autoload": {
         "psr-4": {
-            "saithink\\datadoc\\": "src/"
+            "sai\\datadoc\\": "src/"
         }
     },
     "authors": [
@@ -21,7 +21,7 @@
     "extra": {
         "think": {
             "services": [
-                "saithink\\datadoc\\Service"
+                "sai\\datadoc\\Service"
             ],
             "config": {
                 "datadoc": "src/config.php"

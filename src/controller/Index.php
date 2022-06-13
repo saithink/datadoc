@@ -1,5 +1,5 @@
 <?php
-namespace saithink\datadoc\controller;
+namespace sai\datadoc\controller;
 
 use think\facade\Db;
 use think\facade\View;
