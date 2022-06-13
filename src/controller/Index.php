@@ -1,15 +1,11 @@
 <?php
-namespace saithink\wiki\controller;
+namespace saithink\datadoc\controller;
 
-use think\App;
 use think\facade\Db;
 use think\facade\View;
 
 class Index
 {
-     /** @var \think\App */
-     protected $app;
-
     /**
      * 生成数据库字典html
      * 可直接另存为再copy到word文档中使用
