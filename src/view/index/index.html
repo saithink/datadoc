@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>数据字典</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {include file="index/style" /}
+</head>
+
+<body>
+<div class="header">
+    <h1>{$app}</h1>
+</div>
+<div class="container target-menu">
+    <div class="menu">
+        <div class="lsm-container">
+            <div class="lsm-scroll">
+                <div class="lsm-sidebar">
+                    <ul class="app-menu-list" id="app-target-main">
+                        {foreach $table_data as $tableInfo}
+                        <li>
+                            <a class="frame-info" navto="{$tableInfo.table_name}" href="javascript:;">
+                            <span style="margin-left:5px;">{$tableInfo.table_name}({$tableInfo.table_comment})</span>
+                            </a>
+                        </li>
+                        {/foreach}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="frame">
+        {foreach $table_data as $tableInfo}
+        <div id="{$tableInfo.table_name}" class="frame-list">
+            <div class="title">{$tableInfo.table_name}【{$tableInfo.table_comment}】</div>
+            <div class="info">
+                <div class="table-box">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>字段</th>
+                            <th>类型</th>
+                            <th>空</th>
+                            <th>默认</th>
+                            <th>注释</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach $tableInfo['table_fields'] as $field}
+                        <tr>
+                            <td>
+                                {$field.name}
+                            </td>
+                            <td>
+                                {$field.type}
+                            </td>
+                            <td>
+                                {$field.null}
+                            </td>
+                            <td style="max-width: 30px;">
+                                {$field.default}
+                            </td>
+                            <td>
+                                {$field.comment}
+                            </td>
+                        </tr>
+                        {/foreach}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {/foreach}
+    </div>
+
+    <div class="fixed">
+        <p class="go-top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAB0UlEQVR4Xu2YsU7DQAyGr3kANl6AgQGmKFGywiPQgRHxZuxMiBeAF7AyNQMSK0+QoUN0QZESqYra9Hpn+yydO+ds/59/n0/dmMR/m8T1GwWgDkicgI5A4gbQS1BHQEcgcQI6AokbQLeAjoCOQOIEdAQSN4BugWgjkOf5XZZl78aYvbX2pWmaNoYbowA4EH8/id5Za59jQGAHcET83PgoEFgBrIiPBoENgIP4KBBYAFwgnh0COQAP8awQSAE4iN9NaudtsNyE5BcjGQAX8ePqGxVP74EoEEgAuIqf9/6l32M+mNAB+IrxPRcKAxVAqIjQ8z4w0ABgFY8VxxUGCgDsorHjrcEIBkBVLFXcJYwgANRFUscfYXgD4ChuLJA6jzeAoijejDGvJ+YL9QXnAOEDAJ5cL77D70IAfBljHo4kRRU/xz8D4RsAHiUAIBHvAEEEAFLxZyBEB8AifgVCVACs4k9A4AdQluXnMAw3sf7NXazIHwDYsl6CVVXddl3317Zt55MY60xd11d9318DwK9PTO816JNM4hkFILErnDWpAzhpS8ylDpDYFc6a1AGctCXmUgdI7ApnTeoATtoSc6kDJHaFsyZ1ACdtibnUARK7wlnTP6wjWlArYJLHAAAAAElFTkSuQmCC"></p>
+    </div>
+
+</div>
+
+<script src="//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.4.1/jquery.min.js"></script>
+<script src="//lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+{include file="index/script" /}
+</body>
+</html>
